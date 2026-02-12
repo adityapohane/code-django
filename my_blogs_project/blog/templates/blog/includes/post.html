@@ -1,0 +1,20 @@
+{% load static %}
+
+<li>
+  <article class="post">
+    <a href="{% url 'post_details_page' post.slug %}"> 
+       {% comment %} we add a slug with url tag {% endcomment %}
+      {% comment %} <img src="{% static 'blog/images/mountains.jpg' %}" alt="Mountain Hiking"/> {% endcomment %}
+      {% comment %} <img src="{% static 'blog/images/'| add:post.image %}" alt="Mountain Hiking"/>   {% endcomment %}
+      <img src="{% static 'blog/images/' %}{{post.image}} " alt="{{post.title}}"/>  
+      {% comment %} # if we have only image name {% endcomment %}
+      {% comment %} <img src="{{post.image}}" alt="Mountain Hiking"/> {% endcomment %}
+      <div class="post__content">
+        <h3>{{post.title }}</h3>
+        <p>
+         {{post.excerpt}}
+        </p>
+      </div>
+    </a>
+  </article>
+</li>
