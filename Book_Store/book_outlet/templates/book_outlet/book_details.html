@@ -1,0 +1,19 @@
+{% extends "book_outlet/base.html" %}
+{% block title %}
+Books Details Page
+{% endblock title %}
+
+{% comment %} {% block content %}
+<h5>Books Details Page</h5>
+<h5>Title: {{book.title}}</h5>
+<h5>Title: {{book.author}}</h5>
+<h5>Title: {{book.rating}}</h5>
+<h5>Title: {{book.is_bestselling}}</h5>
+{% endblock content %} {% endcomment %}
+{% block content %}
+<h5>Books Details Page</h5>
+<h5>Title: {{title}}</h5>
+<h5>author: {{author}}</h5>
+<h5>rating: {{rating}}</h5>
+<h5>is_bestselling: {{is_bestselling}}</h5>
+{% endblock content %}

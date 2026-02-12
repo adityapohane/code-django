@@ -1,0 +1,21 @@
+{% extends "book_outlet/base.html" %}
+
+{% block title %}
+
+{% endblock title %}
+
+{% block content %}
+<ul>
+    {% for book in books %}
+    {% comment %} <li><a href="books/{{book.id}}">{{book.title}}</a> </li>          {% endcomment %}
+    {% comment %} <li><a href="{% url 'book-details' book.id %}">{{book.title}}</a> </li>          {% endcomment %}
+    <li><a href="{{book.get_absolute_url}}">{{book.title}}</a> </li>  
+    {% comment %} check models for get_absolute_url method which will book object will have       {% endcomment %}
+    {% endfor %}
+
+    <hr>
+
+    <p>total Number of Books : {{total_books}}</p>
+    <p>Avg Ratings : {{avg_rating.rating__avg}}</p>
+</ul>
+{% endblock content %}
